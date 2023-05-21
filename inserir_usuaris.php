@@ -136,7 +136,7 @@ $username = $_SESSION['username'];
 <div class="container">
     <div class="row">
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <h2>Añadir usuario</h2>
+        <h2>Inserir un usuari</h2>
 
         <form action="" method="post">
           <div class="form-group">
@@ -145,36 +145,36 @@ $username = $_SESSION['username'];
           </div>
 
           <div class="form-group">
-            <label for="nom">Nombre:</label>
+            <label for="nom">Nom:</label>
             <input type="text" name="nom" id="nom" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="cognom1">Primer apellido:</label>
+            <label for="cognom1">Primer cognom:</label>
             <input type="text" name="cognom1" id="cognom1" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="cognom2">Segundo apellido:</label>
+            <label for="cognom2">Segon cognom:</label>
             <input type="text" name="cognom2" id="cognom2" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="correu">Correo electrónico:</label>
+            <label for="correu">Correu electrònic:</label>
             <input type="email" name="correu" id="correu" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="grupClasse">Grupo de clase:</label>
+            <label for="grupClasse">Grup de classe:</label>
             <input type="text" name="grupClasse" id="grupClasse" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label for="esProfe">¿Es profesor?</label>
+            <label for="esProfe">Es professor?</label>
             <input type="checkbox" name="esProfe" id="esProfe">
           </div>
 
-          <button type="submit" class="btn btn-primary">Agregar usuario</button>
+          <button type="submit" class="btn btn-primary">Inserir usuari</button>
         </form>
       </main>
     </div>
