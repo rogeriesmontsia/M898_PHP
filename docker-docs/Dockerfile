@@ -8,6 +8,6 @@ WORKDIR /var/www/html
 
 RUN git clone https://github.com/rogeriesmontsia/M898_PHP.git .
 
-cd M898/
+WORKDIR /var/www/html/M898
 
 mv * ..
