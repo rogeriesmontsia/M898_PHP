@@ -155,11 +155,6 @@ $username = $_SESSION['username'];
   <input type="text" name="model" id="model" class="form-control" required>
 </div>
 
-<div class="form-group">
-  <label for="origen">Origen:</label>
-  <input type="text" name="origen" id="origen" class="form-control" required>
-</div>
-
 
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
@@ -180,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $idTipus = $_POST["idTipus"];
   $tipus = $_POST["tipus"];
   $model = $_POST["model"];
-  $origen = $_POST["origen"];
+  $origen = "DEP";
   
 
   // Verificar si la conexión fue exitosa
