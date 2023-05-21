@@ -135,7 +135,7 @@ $username = $_SESSION['username'];
 <div class="container">
   <div class="row">
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <h2>Seleccionar Alumno y Campo Tipus</h2>
+      <h2>Assignar material a un alumne</h2>
 
       <form action="" method="post">
         <div class="form-group">
@@ -146,6 +146,28 @@ $username = $_SESSION['username'];
 
             // Fetch Alumnes where esProfe is false
             $query = "SELECT * FROM Alumnes WHERE esProfe = 0";
+            $result = $conn->query($query);
+
+            // Check if any rows are returned
+            if ($result && $result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo '<option value="' . $row['id'] . '">' . $row['nom'] . ' ' . $row['cognom1'] . ' ' . $row['cognom2'] . '</option>';
+              }
+            } else {
+              echo '<option value="">No hay alumnos disponibles</option>';
+            }
+            ?>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="idMaterial">ID del material:</label>
+          <select name="alumno" id="alumno" class="form-control">
+            <?php
+            require_once 'conexiodb.php';
+
+            // Fetch Alumnes where esProfe is false
+            $query = "SELECT id FROM Material";
             $result = $conn->query($query);
 
             // Check if any rows are returned
@@ -191,7 +213,7 @@ $username = $_SESSION['username'];
         $campoTipus = $_POST['campo_tipus'];
 
         // Fetch records from Material table that match the selected campo_tipus
-        $query = "SELECT * FROM Material WHERE idTipus IN (SELECT id FROM TipusMaterial WHERE tipus = '$campoTipus')";
+        $query = "INSERT INTO Assignacions(ID, IdMaterial, idAlumne) VALUES (SELECT id FROM TipusMaterial WHERE tipus = '$campoTipus')";
         $result = $conn->query($query);
 
         // Check if any rows are returned
