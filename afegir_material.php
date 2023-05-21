@@ -189,6 +189,27 @@ $username = $_SESSION['username'];
     <input type="text" name="idUbicacio" id="idUbicacio" class="form-control" required>
   </div>
 
+  <div class="form-group">
+  <label for="id">ID:</label>
+  <input type="text" name="id" id="id" class="form-control" required>
+</div>
+
+<div class="form-group">
+  <label for="tipus">Tipus:</label>
+  <input type="text" name="tipus" id="tipus" class="form-control" required>
+</div>
+
+<div class="form-group">
+  <label for="model">Model:</label>
+  <input type="text" name="model" id="model" class="form-control" required>
+</div>
+
+<div class="form-group">
+  <label for="origen">Origen:</label>
+  <input type="text" name="origen" id="origen" class="form-control" required>
+</div>
+
+
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
@@ -220,24 +241,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Error de conexión: " . $conn->connect_error);
   }
 
-  // Preparar la consulta de inserción
-  $stmt = $conn->prepare("INSERT INTO Material (id, idTipus, idInventari, etiquetaDepInf, numSerie, macEthernet, macWifi, SACE, dataAdquisicio, idUbicacio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+  // Preparar la consulta de inserción para la tabla Material
+  $stmt1 = $conn->prepare("INSERT INTO Material (id, idTipus, idInventari, etiquetaDepInf, numSerie, macEthernet, macWifi, SACE, dataAdquisicio, idUbicacio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-  // Vincular los parámetros
-  $stmt->bind_param("ssssssssss", $id, $idTipus, $idInventari, $etiquetaDepInf, $numSerie, $macEthernet, $macWifi, $SACE, $dataAdquisicio, $idUbicacio);
+  // Vincular los parámetros para la tabla Material
+  $stmt1->bind_param("ssssssssss", $id, $idTipus, $idInventari, $etiquetaDepInf, $numSerie, $macEthernet, $macWifi, $SACE, $dataAdquisicio, $idUbicacio);
 
-  // Ejecutar la consulta
-  if ($stmt->execute()) {
-    echo "Material agregado correctamente";
+  // Preparar la consulta de inserción para la tabla TipusMaterial
+  $stmt2 = $conn->prepare("INSERT INTO TipusMaterial (id, tipus, model, origen) VALUES (?, ?, ?, ?)");
+
+  // Vincular los parámetros para la tabla TipusMaterial
+  $stmt2->bind_param("ssss", $idTipus, $tipus, $model, $origen);
+
+  // Ejecutar las consultas
+  if ($stmt1->execute() && $stmt2->execute()) {
+    echo "Material y TipusMaterial agregados correctamente";
   } else {
-    echo "Error al agregar el material: " . $stmt->error;
+    echo "Error al agregar los registros: " . $stmt1->error . " - " . $stmt2->error;
   }
 
   // Cerrar la conexión y liberar recursos
-  $stmt->close();
+  $stmt1->close();
+  $stmt2->close();
   $conn->close();
 }
 ?>
+
 
 
     </main>
