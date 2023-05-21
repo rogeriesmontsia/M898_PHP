@@ -225,16 +225,8 @@ require_once 'conexiodb.php'; // Asegúrate de incluir el archivo que contiene l
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Obtener los valores ingresados por el usuario
-  $id = $_POST["id"];
+
   $idTipus = $_POST["idTipus"];
-  $idInventari = $_POST["idInventari"];
-  $etiquetaDepInf = $_POST["etiquetaDepInf"];
-  $numSerie = $_POST["numSerie"];
-  $macEthernet = $_POST["macEthernet"];
-  $macWifi = $_POST["macWifi"];
-  $SACE = $_POST["SACE"];
-  $dataAdquisicio = $_POST["dataAdquisicio"];
-  $idUbicacio = $_POST["idUbicacio"];
   $tipus = $_POST["tipus"];
   $model = $_POST["model"];
   $origen = $_POST["origen"];
@@ -245,12 +237,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die("Error de conexión: " . $conn->connect_error);
   }
 
-  // Preparar la consulta de inserción para la tabla Material
-  $stmt1 = $conn->prepare("INSERT INTO Material (id, idTipus, idInventari, etiquetaDepInf, numSerie, macEthernet, macWifi, SACE, dataAdquisicio, idUbicacio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-  // Vincular los parámetros para la tabla Material
-  $stmt1->bind_param("ssssssssss", $id, $idTipus, $idInventari, $etiquetaDepInf, $numSerie, $macEthernet, $macWifi, $SACE, $dataAdquisicio, $idUbicacio);
-
   // Preparar la consulta de inserción para la tabla TipusMaterial
   $stmt2 = $conn->prepare("INSERT INTO TipusMaterial (id, tipus, model, origen) VALUES (?, ?, ?, ?)");
 
@@ -258,14 +244,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $stmt2->bind_param("ssss", $idTipus, $tipus, $model, $origen);
 
   // Ejecutar las consultas
-  if ($stmt1->execute() && $stmt2->execute()) {
+  if ($stmt2->execute()) {
     echo "Material y TipusMaterial agregados correctamente";
   } else {
-    echo "Error al agregar los registros: " . $stmt1->error . " - " . $stmt2->error;
+    echo "Error al agregar los registros: " . $stmt2->error;
   }
 
   // Cerrar la conexión y liberar recursos
-  $stmt1->close();
   $stmt2->close();
   $conn->close();
 }
