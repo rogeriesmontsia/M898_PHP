@@ -140,59 +140,10 @@ $username = $_SESSION['username'];
 
         <form action="" method="post">
   <div class="form-group">
-    <label for="id">ID:</label>
-    <input type="text" name="id" id="id" class="form-control" required>
-  </div>
-
-  <div class="form-group">
     <label for="idTipus">ID Tipo:</label>
     <input type="text" name="idTipus" id="idTipus" class="form-control" required>
   </div>
 
-  <div class="form-group">
-    <label for="idInventari">ID Inventario:</label>
-    <input type="text" name="idInventari" id="idInventari" class="form-control" required>
-  </div>
-
-  <div class="form-group">
-    <label for="etiquetaDepInf">Etiqueta Departamento de Informática:</label>
-    <input type="text" name="etiquetaDepInf" id="etiquetaDepInf" class="form-control" required>
-  </div>
-
-  <div class="form-group">
-    <label for="numSerie">Número de Serie:</label>
-    <input type="text" name="numSerie" id="numSerie" class="form-control" required>
-  </div>
-
-  <div class="form-group">
-    <label for="macEthernet">MAC Ethernet:</label>
-    <input type="text" name="macEthernet" id="macEthernet" class="form-control" required>
-  </div>
-
-  <div class="form-group">
-    <label for="macWifi">MAC Wi-Fi:</label>
-    <input type="text" name="macWifi" id="macWifi" class="form-control" required>
-  </div>
-
-  <div class="form-group">
-    <label for="SACE">SACE:</label>
-    <input type="text" name="SACE" id="SACE" class="form-control" required>
-  </div>
-
-  <div class="form-group">
-    <label for="dataAdquisicio">Fecha de Adquisición:</label>
-    <input type="date" name="dataAdquisicio" id="dataAdquisicio" class="form-control" required>
-  </div>
-
-  <div class="form-group">
-    <label for="idUbicacio">ID Ubicación:</label>
-    <input type="text" name="idUbicacio" id="idUbicacio" class="form-control" required>
-  </div>
-
-  <div class="form-group">
-  <label for="id">ID:</label>
-  <input type="text" name="id" id="id" class="form-control" required>
-</div>
 
 <div class="form-group">
   <label for="tipus">Tipus:</label>
