@@ -131,9 +131,8 @@ $username = $_SESSION['username'];
 
       
       
-<div class="container">
-  <div class="row">
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+    <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <h2>Material assignat a alumnes</h2>
 
       <?php
