@@ -235,6 +235,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $SACE = $_POST["SACE"];
   $dataAdquisicio = $_POST["dataAdquisicio"];
   $idUbicacio = $_POST["idUbicacio"];
+  $tipus = $_POST["tipus"];
+  $model = $_POST["model"];
+  $origen = $_POST["origen"];
+  
 
   // Verificar si la conexión fue exitosa
   if ($conn->connect_error) {
