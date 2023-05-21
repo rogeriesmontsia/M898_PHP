@@ -138,106 +138,56 @@ $username = $_SESSION['username'];
       <h2>Assignar material a un alumne</h2>
 
       <form action="" method="post">
-        <div class="form-group">
-          <label for="alumno">Alumno:</label>
-          <select name="alumno" id="alumno" class="form-control">
-            <?php
-            require_once 'conexiodb.php';
+      <div class="form-group">
+  <label for="alumne">Alumne:</label>
+  <select name="alumne" id="alumne" class="form-control">
+    <?php
+    require_once 'conexiodb.php';
 
-            // Fetch Alumnes where esProfe is false
-            $query = "SELECT * FROM Alumnes WHERE esProfe = 0";
-            $result = $conn->query($query);
+    // Fetch Alumnes where esProfe is false
+    $query = "SELECT * FROM Alumnes WHERE esProfe = 0";
+    $result = $conn->query($query);
 
-            // Check if any rows are returned
-            if ($result && $result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-                echo '<option value="' . $row['id'] . '">' . $row['nom'] . ' ' . $row['cognom1'] . ' ' . $row['cognom2'] . '</option>';
-              }
-            } else {
-              echo '<option value="">No hay alumnos disponibles</option>';
-            }
-            ?>
-          </select>
-        </div>
+    // Check if any rows are returned
+    if ($result && $result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        echo '<option value="' . $row['id'] . '">' . $row['nom'] . ' ' . $row['cognom1'] . ' ' . $row['cognom2'] . '</option>';
+      }
+    } else {
+      echo '<option value="">No hay alumnos disponibles</option>';
+    }
+    ?>
+  </select>
+</div>
 
-        <div class="form-group">
-          <label for="idMaterial">ID del material:</label>
-          <select name="alumno" id="alumno" class="form-control">
-            <?php
-            require_once 'conexiodb.php';
 
-            // Fetch Alumnes where esProfe is false
-            $query = "SELECT id FROM Material";
-            $result = $conn->query($query);
+<div class="form-group">
+  <label for="idMaterial">ID del material:</label>
+  <select name="idMaterial" id="idMaterial" class="form-control">
+    <?php
+    require_once 'conexiodb.php';
 
-            // Check if any rows are returned
-            if ($result && $result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-                echo '<option value="' . $row['id'] . '">' . $row['nom'] . ' ' . $row['cognom1'] . ' ' . $row['cognom2'] . '</option>';
-              }
-            } else {
-              echo '<option value="">No hay alumnos disponibles</option>';
-            }
-            ?>
-          </select>
-        </div>
+    // Fetch Material
+    $query = "SELECT id FROM Material";
+    $result = $conn->query($query);
+
+    // Check if any rows are returned
+    if ($result && $result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        echo '<option value="' . $row['id'] . '">' . $row['id'] . '</option>';
+      }
+    } else {
+      echo '<option value="">No hay materiales disponibles</option>';
+    }
+    ?>
+  </select>
+</div>
+
 
         <div class="form-group">
           <label for="campo_tipus">Campo Tipus:</label>
           <select name="campo_tipus" id="campo_tipus" class="form-control">
-            <?php
-            // Fetch values from the TipusMaterial table
-            $query = "SELECT DISTINCT tipus FROM TipusMaterial";
-            $result = $conn->query($query);
-
-            // Check if any rows are returned
-            if ($result && $result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-                echo '<option value="' . $row['tipus'] . '">' . $row['tipus'] . '</option>';
-              }
-            } else {
-              echo '<option value="">No hay campos disponibles</option>';
-            }
-            ?>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Seleccionar</button>
-      </form>
-
-      <?php
-      // Process the form submission
-      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Get the selected values
-        $alumnoId = $_POST['alumno'];
-        $campoTipus = $_POST['campo_tipus'];
-
-        // Fetch records from Material table that match the selected campo_tipus
-        $query = "INSERT INTO Assignacions(ID, IdMaterial, idAlumne) VALUES (SELECT id FROM TipusMaterial WHERE tipus = '$campoTipus')";
-        $result = $conn->query($query);
-
-        // Check if any rows are returned
-        if ($result && $result->num_rows > 0) {
-          echo '<h3>Registros encontrados:</h3>';
-          while ($row = $result->fetch_assoc()) {
-            // Output the records as desired
-            echo 'ID: ' . $row['id'] . '<br>';
-            echo 'ID Tipus: ' . $row['idTipus'] . '<br>';
-            echo 'ID Inventari: ' . $row['idInventari'] . '<br>';
-            echo 'Etiqueta Dep Inf: ' . $row['etiquetaDepInf'] . '<br>';
-            echo 'Número de Serie: ' . $row['numSerie'] . '<br>';
-            echo 'MAC Ethernet: ' . $row['macEthernet'] . '<br>';
-            echo 'MAC Wifi: ' . $row['macWifi'] . '<br>';
-            echo 'SACE: ' . $row['SACE'] . '<br>';
-            echo 'Data Adquisició: ' . $row['dataAdquisicio'] . '<br>';
-            echo 'ID Ubicació: ' . $row['idUbicacio'] . '<br>';
-            echo '<hr>';
-          }
-        } else {
-          echo '<p>No se encontraron registros.</p>';
-        }
-      }
-      ?>
+            
 
     </main>
   </div>
