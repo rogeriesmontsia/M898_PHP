@@ -136,7 +136,7 @@ $username = $_SESSION['username'];
       require_once 'conexiodb.php';
 
       // Fetch all rows from the Incidencies table
-      $query = "SELECT * FROM Alumnes where esProfe = o";
+      $query = "SELECT * FROM Alumnes where esProfe = 0";
       $result = $conn->query($query);
 
       // Check if any rows are returned
