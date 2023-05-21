@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 session_start();
 
@@ -378,4 +377,3 @@ $username = $_SESSION['username'];
   
 
 </body></html>
->>>>>>> 6e055297402b3465d38a1969f3e354f563154477
