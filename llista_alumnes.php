@@ -158,12 +158,11 @@ $username = $_SESSION['username'];
           while ($row = $result->fetch_assoc()) {
               echo '<tr>';
               echo '<td>' . $row['id'] . '</td>';
-              echo '<td>' . $row['informacio'] . '</td>';
-              echo '<td>' . $row['dataOberta'] . '</td>';
-              echo '<td>' . $row['dataTancada'] . '</td>';
-              echo '<td>' . $row['idAlumne'] . '</td>';
-              echo '<td>' . $row['idDispositiu'] . '</td>';
-              echo '<td>' . $row['idEstat'] . '</td>';
+              echo '<td>' . $row['nom'] . '</td>';
+              echo '<td>' . $row['cognom1'] . '</td>';
+              echo '<td>' . $row['cognom2'] . '</td>';
+              echo '<td>' . $row['correu'] . '</td>';
+              echo '<td>' . $row['grupClasse'] . '</td>';
               echo '</tr>';
           }
 
