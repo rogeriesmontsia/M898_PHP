@@ -109,9 +109,7 @@ CREATE TABLE `Incidencies` (
 --
 
 INSERT INTO `Incidencies` (`id`, `informacio`, `dataOberta`, `dataTancada`, `idAlumne`, `idDispositiu`, `idEstat`) VALUES
-(1, 'no funciona la pantalla', '2023-05-20', NULL, 47857777, 1, NULL),
-(2, 'lo androide eiximÃ¨', '2023-05-20', NULL, 47857777, 1, NULL),
-(3, 'es gay', '2023-05-20', NULL, 47857777, 1, NULL);
+(1, 'no funciona la pantalla', '2023-05-20', NULL, 47857777, 1, NULL);
 
 -- --------------------------------------------------------
 
