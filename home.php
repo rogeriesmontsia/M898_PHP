@@ -108,11 +108,7 @@ if ($result && $result->num_rows > 0) {
     </main>
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">© 2022 - 2023 GestInf</p>
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Privacy</a></li>
-            <li class="list-inline-item"><a href="#">Terms</a></li>
-            <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
+        
     </footer>
 </div>
 <script src="Checkout%20example%20%C2%B7%20Bootstrap%20v5.0_files/bootstrap.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
