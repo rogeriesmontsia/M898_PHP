@@ -94,7 +94,7 @@ if ($result && $result->num_rows > 0) {
             <form action="formulari_alumne.php" method="POST">
                 <div class="form-group">
                     <label for="idDispositiu">ID del dispositiu:</label>
-                    <input type="text" name="idDispositiu" id="idDispositiu" class="form-control">
+                    <input type="text" name="idDispositiu" id="idDispositiu" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="informacio">Informació:</label>
