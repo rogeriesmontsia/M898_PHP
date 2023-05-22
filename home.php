@@ -89,17 +89,19 @@ if ($result && $result->num_rows > 0) {
             <img class="d-block mx-auto mb-4" src="Checkout%20example%20%C2%B7%20Bootstrap%20v5.0_files/bootstrap-logo.svg" alt="" width="72" height="57">
             <h2>Sol·licitud d'equip informàtic</h2>
             <p class="lead">Per a sol·licitar equip informàtic o informar una incidència cal emplenar el formulari que tenim a continuació</p>
+            
+            
             <form action="formulari_alumne.php" method="POST">
-                <div>
+                <div class="form-group">
                     <label for="idDispositiu">ID del dispositiu:</label>
-                    <input type="text" name="idDispositiu" id="idDispositiu" required>
+                    <input type="text" name="idDispositiu" id="idDispositiu" class="form-control">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="informacio">Informació:</label>
-                    <textarea name="informacio" id="informacio" required></textarea>
+                    <textarea name="informacio" id="informacio" class="form-control" required></textarea>
                 </div>
                 <div>
-                    <button type="submit">Guardar</button>
+                <button type="submit" class="btn btn-primary">Envia el formulari</button>
                 </div>
             </form>
         </div>
