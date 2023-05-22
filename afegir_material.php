@@ -140,18 +140,18 @@ $username = $_SESSION['username'];
 
         <form action="" method="post">
   <div class="form-group">
-    <label for="idTipus">ID Tipo:</label>
+    <label for="idTipus">ID del material:</label>
     <input type="text" name="idTipus" id="idTipus" class="form-control" required>
   </div>
 
 
 <div class="form-group">
-  <label for="tipus">Tipus:</label>
+  <label for="tipus">Tipus de material (ordinador, tablet...):</label>
   <input type="text" name="tipus" id="tipus" class="form-control" required>
 </div>
 
 <div class="form-group">
-  <label for="model">Model:</label>
+  <label for="model">Model de l'aparell:</label>
   <input type="text" name="model" id="model" class="form-control" required>
 </div>
 
