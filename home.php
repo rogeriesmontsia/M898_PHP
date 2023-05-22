@@ -88,7 +88,7 @@ if ($result && $result->num_rows > 0) {
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="Checkout%20example%20%C2%B7%20Bootstrap%20v5.0_files/bootstrap-logo.svg" alt="" width="72" height="57">
             <h2>Sol·licitud d'equip informàtic</h2>
-            <p class="lead">Per a sol·licitar equip informàtic cal emplenar el formulari que tenim a continuació</p>
+            <p class="lead">Per a sol·licitar equip informàtic o informar una incidència cal emplenar el formulari que tenim a continuació</p>
             <form action="formulari_alumne.php" method="POST">
                 <div>
                     <label for="idDispositiu">ID del dispositiu:</label>
@@ -105,7 +105,7 @@ if ($result && $result->num_rows > 0) {
         </div>
     </main>
     <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">© 2017–2021 Company Name</p>
+        <p class="mb-1">© 2022 - 2023 GestInf</p>
         <ul class="list-inline">
             <li class="list-inline-item"><a href="#">Privacy</a></li>
             <li class="list-inline-item"><a href="#">Terms</a></li>
