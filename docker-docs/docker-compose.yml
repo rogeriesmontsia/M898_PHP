@@ -28,9 +28,3 @@ services:
       - 'mariadb:db'
     ports:
       - 8081:80
-
-  myapp:
-    image: alpine/git
-    volumes:
-      - ./repo:/app
-    command: tail -f /dev/null
