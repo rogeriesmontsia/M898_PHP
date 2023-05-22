@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main class="form-signin">
         <form method="POST" action="">
         
-        <img class="mb-4 mx-auto d-block" src="https://agora.xtec.cat/insmontsia/wp-content/uploads/usu12/2021/09/logo_ins_montsia.png" alt="" width="" height="">
+        <img class="mb-4 mx-auto d-block" src="https://agora.xtec.cat/insmontsia/wp-content/uploads/usu12/2021/09/logo_ins_montsia.png" alt="" width="400" height="200">
            
             <h1 class="h3 mb-3 fw-normal">Inicia sessió</h1>
 
