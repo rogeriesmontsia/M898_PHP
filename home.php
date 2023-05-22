@@ -86,8 +86,8 @@ if ($result && $result->num_rows > 0) {
 <div class="container">
     <main>
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="Checkout%20example%20%C2%B7%20Bootstrap%20v5.0_files/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h2>Sol·licitud d'equip informàtic</h2>
+        <img class="mb-4 mx-auto d-block" src="https://agora.xtec.cat/insmontsia/wp-content/uploads/usu12/2021/09/logo_ins_montsia.png" alt="" width="300" height="150">    
+        <h2>Sol·licitud d'equip informàtic</h2>
             <p class="lead">Per a sol·licitar equip informàtic o informar una incidència cal emplenar el formulari que tenim a continuació</p>
             
             
